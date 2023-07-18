@@ -1,0 +1,69 @@
+.red-margin {
+    margin: 100px;
+    display: flex;
+    justify-content: center;
+}
+.red-square {
+    background-color: red;
+    width: 1000px;
+    height: 1000px;
+    border-radius: 20px;
+    
+}
+.title {
+    display: flex;
+    justify-content: center;
+    margin: 25px;
+}
+#title-text {
+    color: white;
+    font-family: cursive, sans-serif;
+    font-size: 32px;
+}
+.whitespace {
+    display: flex;
+    justify-content: center;
+}
+#sketch {
+    background-color: white;
+    width: 800px;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 25px;
+    margin-left: 25px;
+}
+.nobs {
+    display: flex;
+    justify-content: center;
+    margin: 25px;
+}
+#l-nob {
+    margin-right: auto;
+    height: 50px;
+    width: 50px;
+    background-color: lightgray;
+    border-radius: 25px;
+}
+#r-nob {
+    margin-left: auto;
+    height: 50px;
+    width: 50px;
+    background-color: lightgray;
+    border-radius: 25px;
+}
+.cuadro {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+}
+
+.container:hover {
+    background-color: grey;
+}
+.container {
+    grid-template-rows: 50px 50px;
+}
+
+
