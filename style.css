@@ -33,14 +33,14 @@
     align-items: center;
     margin-right: 25px;
     margin-left: 25px;
+    flex-wrap: wrap;
 }
 .nobs {
     display: flex;
     justify-content: center;
     margin: 25px;
 }
-#l-nob {
-    margin-right: auto;
+#l-nob, #r-nob {
     height: 50px;
     width: 50px;
     background-color: lightgray;
@@ -48,22 +48,33 @@
 }
 #r-nob {
     margin-left: auto;
-    height: 50px;
-    width: 50px;
-    background-color: lightgray;
-    border-radius: 25px;
+}
+#l-nob {
+    margin-right: auto;
 }
 .cuadro {
     background-color: white;
     width: 50px;
     height: 50px;
 }
+.box {
+    width: 200px;
+    height: 200px;
+}
 
-.container:hover {
+.active {
     background-color: grey;
 }
-.container {
-    grid-template-rows: 50px 50px;
+
+.erase,.reset {
+    background-color: red;
+    color: white;
+    font-family: cursive, sans-serif;
+    width: 100px;
+    height: 50px;
+    border-color: white;
+    border-width: 2px;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
-
-
