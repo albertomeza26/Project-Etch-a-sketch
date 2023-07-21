@@ -6,7 +6,7 @@ for (let i = 0; i <= 15; i++) {
 let newClass = document.querySelectorAll('.box');
 
   newClass.forEach ((newClass) => {
-  newClass.addEventListener ( 'mousedown', () => {
+  newClass.addEventListener ( 'mouseover', () => {
     newClass.classList.add('active');
   });
 });
