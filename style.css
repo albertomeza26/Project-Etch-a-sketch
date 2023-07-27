@@ -2,12 +2,16 @@
     margin: 100px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .red-square {
     background-color: red;
-    width: 1000px;
-    height: 1000px;
+    width: 600px;
+    height: 600px;
     border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
 }
 .title {
@@ -26,8 +30,8 @@
 }
 #sketch {
     background-color: white;
-    width: 800px;
-    height: 800px;
+    width: 300px;
+    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +42,8 @@
 .nobs {
     display: flex;
     justify-content: center;
-    margin: 25px;
+    align-items: center;
+    margin-bottom: auto;
 }
 #l-nob, #r-nob {
     height: 50px;
@@ -52,29 +57,34 @@
 #l-nob {
     margin-right: auto;
 }
-.cuadro {
-    background-color: white;
-    width: 50px;
-    height: 50px;
-}
-.box {
-    width: 200px;
-    height: 200px;
-}
 
 .active {
-    background-color: grey;
+    background-color: #808080;
 }
 
-.erase,.reset {
+.reset,.clear,.grayscale,.rgb,.borrar {
     background-color: red;
     color: white;
     font-family: cursive, sans-serif;
     width: 100px;
-    height: 50px;
+    height: 30px;
     border-color: white;
     border-width: 2px;
     border-radius: 5px;
     margin-left: 5px;
     margin-right: 5px;
 }
+.slider {
+    background: red;
+}
+.align {
+    width: 500px;
+    height: 500px;
+}
+.selections {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
