@@ -53,7 +53,7 @@ function rainbow()  {
     );
   });
   }
-//Erase background color function
+//Clear all background color function
   function remover()  { 
     newClass.forEach ((newClass) => {
     newClass.addEventListener ( 'mouseover', () => {
