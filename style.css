@@ -1,3 +1,6 @@
+body {
+    background-image: url("images/woodenbackground.png");
+}
 .red-margin {
     margin: 100px;
     display: flex;
@@ -6,12 +9,14 @@
 }
 .red-square {
     background-color: red;
+    min-width: 600px;
     width: 600px;
     height: 600px;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.705), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     
 }
 .title {
@@ -50,6 +55,7 @@
     width: 50px;
     background-color: lightgray;
     border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 #r-nob {
     margin-left: auto;
@@ -62,7 +68,7 @@
     background-color: #808080;
 }
 
-.reset,.clear,.grayscale,.rgb,.borrar {
+.redraw,.clear,.grayscale,.rgb,.borrar,.reset {
     background-color: red;
     color: white;
     font-family: cursive, sans-serif;
@@ -88,3 +94,21 @@
     margin-top: 15px;
 }
 
+.footer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-family: cursive, sans-serif;
+}
+img {
+    width: 25px;
+}
+.slidecontainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: cursive;
+    color: white;
+  }

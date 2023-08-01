@@ -1,70 +1,105 @@
-let gridNumber = prompt('Enter a number between 1-64. To create your Drawing Grid');
-let gridBox = Number(gridNumber);
-let boxCount = (gridBox * gridBox);
-let pixelCount = (300/gridBox);
-
-//Create multiple divs using a loop function
-for (let i = 1; i <= `${boxCount}`; i++) {
-    document.getElementById('sketch').innerHTML += "<div class='box'/"+`style="width:${pixelCount}px; height:${pixelCount}px;"`+"></div>";
-  }
-//Change color when each box is clicked
-let newClass = document.querySelectorAll('.box');
-let newGrid = document.querySelector('.clear');
+let output = document.getElementById("demo");
+let grid = document.querySelector('#sketch');
+let gridP = document.querySelector('.whitespace');
+let rgb = document.querySelector('.rgb');
+let redraw = document.querySelector('.redraw');
+let renovar = document.querySelector('.reset');
 let grayscale = document.querySelector('.grayscale');
 let borrar = document.querySelector('.borrar');
+let enBlanco = document.querySelector('.clear');
 
-
-
-function draw()  { 
-  newClass.forEach ((newClass) => {
-  newClass.addEventListener ( 'mouseover', () => {
-    newClass.style.backgroundColor = null;
-    newClass.classList.add('active');
+function removeAllChildNodes(parent){
+  while(parent.firstChild){
+      parent.removeChild(parent.firstChild);
   }
-  );
-});
 }
 
-//Clear button function to remove active class
-let reset = document.querySelector('.reset');
+//Create multiple divs using a loop function
+function createGrid () {
+  let gridStart = 16;
+  let gridBox = Number(gridStart);
+  let boxCount = (gridBox * gridBox);
+  let pixelCount = (300/gridBox);
+for (let i = 1; i <= boxCount; i++) {
+    const div = document.createElement('div');
+    div.classList.add('cell');
+    div.style.width = pixelCount+'px';
+    div.style.height = pixelCount+'px';
+    grid.appendChild(div);
+    output.innerHTML = "Gridsize: "+gridStart+" X "+gridStart; 
+  }
+}
+//Create a new grid
+function reCreateGrid () {
+  removeAllChildNodes(grid);
+  let gridStart = prompt('Enter new grid size. 1-100');
+  let gridBox = Number(gridStart);
+  let boxCount = (gridBox * gridBox);
+  let pixelCount = (300/gridBox);
+for (let i = 1; i <= boxCount; i++) {
+    const div = document.createElement('div');
+    div.classList.add('cell');
+    div.style.width = pixelCount+'px';
+    div.style.height = pixelCount+'px';
+    grid.appendChild(div);
+    output.innerHTML = "Gridsize: "+gridStart+" X "+gridStart; 
+  }
+}
 
-newClass.forEach ((newClass) => {
-reset.addEventListener ('click', () => {
-  newClass.classList.remove('active');
-  newClass.style.backgroundColor = null;
-});
-}); 
-
-
-newGrid.addEventListener('click', () => {
-  location.reload();}
+//Function to draw in grays
+function draw() { 
+  let cell = document.querySelectorAll('.cell');
+  cell.forEach((cell) => {
+  cell.addEventListener ( 'mouseover', () => {
+    cell.style.backgroundColor = 'gray';
+  }
   );
+}
+  )
+}
 
 //Random color function
-let rgb = document.querySelector('.rgb');
-
-function rainbow()  { 
-    newClass.forEach ((newClass) => {
-    newClass.addEventListener ( 'mouseover', () => {
+  function rainbow() { 
+    let cell = document.querySelectorAll('.cell');
+    cell.forEach((cell) => {
+    cell.addEventListener ( 'mouseover', () => {
       let randomColor = Math.floor(Math.random()*16777215).toString(16);
-      newClass.classList.remove('active');
-      newClass.style.backgroundColor = "#" + randomColor;
+      cell.style.backgroundColor = "#" + randomColor;
     }
     );
-  });
   }
-//Clear all background color function
-  function remover()  { 
-    newClass.forEach ((newClass) => {
-    newClass.addEventListener ( 'mouseover', () => {
-      newClass.classList.remove('active');
-      newClass.style.backgroundColor = null;
-    }
-    );
-  });
+    )
   }
+//Erase background color function
+function borrador() { 
+  let cell = document.querySelectorAll('.cell');
+  cell.forEach((cell) => {
+  cell.addEventListener ( 'mouseover', () => {
+    cell.style.backgroundColor = null;
+  }
+  );
+}
+  )
+}
+//Clear current grid from all colors
+function aclarar() { 
+  let cell = document.querySelectorAll('.cell');
+  cell.forEach((cell) =>
+  cell.style.backgroundColor = null);
+}
 
-rgb.addEventListener('click', rainbow);
-grayscale.addEventListener('click', draw);
-borrar.addEventListener('click', remover);
 
+
+//Reset button function to reset grid back to 16x16
+renovar.addEventListener ('click', () => {
+  location.reload();
+  }
+  )
+  
+rgb.addEventListener('click', () => {rainbow()});
+grayscale.addEventListener ('click', () => {draw()});
+redraw.addEventListener('click', () => {reCreateGrid()});
+borrar.addEventListener('click', () => {borrador()});
+enBlanco.addEventListener('click', () => {aclarar()}); 
+
+createGrid();
