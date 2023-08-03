@@ -50,7 +50,7 @@ for (let i = 1; i <= boxCount; i++) {
 function draw() { 
   let cell = document.querySelectorAll('.cell');
   cell.forEach((cell) => {
-  cell.addEventListener ( 'mouseover', () => {
+  cell.addEventListener ( 'mouseover' || 'touchmove', () => {
     cell.style.backgroundColor = 'gray';
   }
   );
@@ -62,7 +62,7 @@ function draw() {
   function rainbow() { 
     let cell = document.querySelectorAll('.cell');
     cell.forEach((cell) => {
-    cell.addEventListener ( 'mouseover', () => {
+    cell.addEventListener ( 'mouseover' || 'touchmove', () => {
       let randomColor = Math.floor(Math.random()*16777215).toString(16);
       cell.style.backgroundColor = "#" + randomColor;
     }
@@ -74,7 +74,7 @@ function draw() {
 function borrador() { 
   let cell = document.querySelectorAll('.cell');
   cell.forEach((cell) => {
-  cell.addEventListener ( 'mouseover', () => {
+  cell.addEventListener ( 'mouseover' || 'touchmove', () => {
     cell.style.backgroundColor = null;
   }
   );
